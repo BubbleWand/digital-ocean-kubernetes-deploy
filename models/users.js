@@ -10,7 +10,7 @@ const UserSchema = new Schema({
   username: { type: String, required: true },
   // posts: [{ type: Schema.Types.ObjectId, ref:"Post"}],
   points: { type: Number, default: 0},
-  profilePhoto: { type: Schema.Types.Mixed },
+  profilePhoto: { type: String },
   settings: {
     notifications: {
       imageTag: { type: Boolean, default: true },
@@ -47,8 +47,8 @@ const UserSchema = new Schema({
     since: { type: Date}
   }],
   bubblesFollowing: [{ type: Schema.Types.ObjectId, ref: "Bubble"}],
-  photos: [{ type: Schema.Types.ObjectId, ref:"Image"}],
-});
+  photos: [{ type: String, }],
+}, { minimize: false });
 
 
 // storing: loc: { type: "Point", coordinates: [ longitude, latitude ] },

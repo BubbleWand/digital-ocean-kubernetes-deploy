@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken')
 const User = require('../models/users');
-const conn = require('../data/bubble-db');
-const getGfs = require('../utils/getGfs');
+
 
 module.exports =  {
   // SIGNUP GET 
@@ -55,22 +54,4 @@ module.exports =  {
     });
   },
 
-
-  hi : (req, res) => {
-    console.log(req.file)
-    res.send({msg: 'hi'})
-  },
-
-  hello: async (req, res) => {
-    const gfs = getGfs(conn)
-    gfs.files.findOne({ filename: '27f04678a3e9816c830b47aa2646a7bf.jpg'}, (err, file) => {
-      if (!file || file.lenth === 0) {
-        return res.status(404).json({
-          err: 'file name mismatch/ file not found.'
-        })
-      } else {
-        return res.status(200).json(file)
-      }
-    });
-  }
 }

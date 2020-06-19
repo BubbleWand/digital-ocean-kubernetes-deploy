@@ -2,9 +2,6 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const cookieParser = require('cookie-parser');
-const conn = require('./data/bubble-db');
-const Grid = require('gridfs-stream');
-const mongoose = require('mongoose');
 const checkUser = require("./utils/checkUser");
 
 // enabling cors

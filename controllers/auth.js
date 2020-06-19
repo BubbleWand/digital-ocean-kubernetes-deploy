@@ -1,25 +1,22 @@
 const jwt = require('jsonwebtoken')
-const User = require('../models/users');
+const User = require('../models/user');
+const conn = require('../data/bubble-db');
+require('dotenv').config();
 
 
 module.exports =  {
   // SIGNUP GET 
   signupPost: (req, res) => {
-
-    console.log(req.file)
-    console.log(req.body)
     const user = new User(req.body);
-    user.image = req.file
-    user
-      .save()
+    user.profilePhoto = req.file.filename;
+    user.save()
       .then(user => {
-        console.log(user)
         const token = jwt.sign({_id: user._id}, process.env.SECRET, {expiresIn: "60 days"})
-        return res.send({status: 200, success: true, token:token})
+        return res.status(200).json({ msg: "success", token: token});
       })
       .catch(err => {
-        console.log(err)
-        return res.send({status: 401, success: false });
+        console.log('or here?')
+        return res.status(404).json({err: err})
       })
   },
 

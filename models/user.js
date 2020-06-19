@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const Schema = mongoose.Schema;
-const Populate = require("../utils/autopopulate")
 
 const UserSchema = new Schema({
   createdAt: { type: Date },
@@ -33,13 +32,13 @@ const UserSchema = new Schema({
   displayName: { type: String, required: true },
   email: { type: String, required: true },
   phone: { type: String, required: true },
-  bio: { type: String },
+  bio: { type: String, default: "" },
   bubbles: [{
-    id: { type: Schema.Types.ObjectId, ref:"Bubbles" },
+    id: { type: Schema.Types.ObjectId, ref:"Bubble" },
     bubbleUp: { type: Boolean, default: false },
   }],
   events: [{
-    id: { type: Schema.Types.ObjectId, ref:"Bubbles" },
+    id: { type: Schema.Types.ObjectId, ref:"Bubble" },
     going: { type: Number },
   }],
   friends: [ {
@@ -74,6 +73,7 @@ UserSchema.pre("save", function(next) {
       next();
     });
   });
+  next();
 });
 
 // Need to use function to enable this.password to work.

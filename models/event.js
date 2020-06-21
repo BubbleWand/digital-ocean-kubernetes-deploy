@@ -19,7 +19,6 @@ const EventSchema = new Schema({
     status: { type: Boolean, default: true },
   }],
   points: { type: Number, defualt: 0 },
-  tags: [ { type: String }],
   mods: [ {
     id: { type: Schema.Types.ObjectId, ref:"User" },
     permissions: {

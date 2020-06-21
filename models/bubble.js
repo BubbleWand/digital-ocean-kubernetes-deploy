@@ -11,7 +11,6 @@ const BubbleSchema = new Schema({
   },
   private: { type: Boolean, default: false },
   about: { type: String, default: "" },
-  tags: [{ type: String }],
   members: [{ type: Schema.Types.ObjectId, ref:"User" }],
   events: [{ type: Schema.Types.ObjectId, ref:"Event" }],
   points: { type: Number, defualt: 0 },

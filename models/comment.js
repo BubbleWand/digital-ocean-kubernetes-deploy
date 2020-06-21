@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const CommentSchema = new Schema({
   author: { type: Schema.Types.ObjectId, ref:"User", required: true },
+  content: { type: String, default: "" },
   createdAt: { type: Date },
   updatedAt: { type: Date },
   likedBy: [{type: Schema.Types.ObjectId, ref:"User"}],

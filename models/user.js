@@ -7,7 +7,6 @@ const UserSchema = new Schema({
   updatedAt: { type: Date },
   password: { type: String, required: true },
   username: { type: String, required: true, unique: true },
-  // posts: [{ type: Schema.Types.ObjectId, ref:"Post"}],
   points: { type: Number, default: 0},
   profilePhoto: { type: String },
   settings: {
@@ -46,7 +45,7 @@ const UserSchema = new Schema({
     since: { type: Date}
   }],
   bubblesFollowing: [{ type: Schema.Types.ObjectId, ref: "Bubble"}],
-  photos: [{ type: String, }],
+  posts: [{ type: Schema.Types.ObjectId, ref:"Post" }],
 }, { minimize: false });
 
 

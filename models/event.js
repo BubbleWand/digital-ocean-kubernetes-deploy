@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const BubbleSchema = new Schema({
+const EventSchema = new Schema({
   name: { type: String },
   createdBy: { type: Schema.Types.ObjectId, ref:"User" },
   createdAt: { type: Date },
@@ -9,11 +9,15 @@ const BubbleSchema = new Schema({
     type: { type: String },
     coordinates: [Number],
   },
+  startTime: { type: Date },
+  endTime: { type: Date },
   private: { type: Boolean, default: false },
   about: { type: String, default: "" },
   tags: [{ type: String }],
-  members: [{ type: Schema.Types.ObjectId, ref:"User" }],
-  events: [{ type: Schema.Types.ObjectId, ref:"Event" }],
+  members: [{ 
+    id: {type: Schema.Types.ObjectId, ref:"User"},
+    status: { type: Boolean, default: true },
+  }],
   points: { type: Number, defualt: 0 },
   tags: [ { type: String }],
   mods: [ {
@@ -23,15 +27,17 @@ const BubbleSchema = new Schema({
       kickPeople: { type: Boolean, default: true },
       changeAbout: { type: Boolean, default: true },
       deleteChatMessage: { type: Boolean, default: true },
+      deleteImage: { type: Boolean, default: true },
     },
   }],
   photo: { type: String, default: "" },
   wallPhoto: { type: String, default: "" },
+  posts: { type: Schema.Types.ObjectId, ref:"Post" },
 }, { minimize: false });
 
 BubbleSchema.index({ location: "2dsphere" });
 
-BubbleSchema.pre("save", function(next) {
+EventSchema.pre("save", function(next) {
   // SET createdAt AND updatedAt
   const now = new Date();
   if (!this.createdAt) {
@@ -40,4 +46,4 @@ BubbleSchema.pre("save", function(next) {
   next();
 });
 
-module.exports = mongoose.model("Bubble", BubbleSchema);
+module.exports = mongoose.model("Event", EventSchema);

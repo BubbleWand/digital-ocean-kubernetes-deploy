@@ -22,4 +22,6 @@ const storage = new GridFsStorage({
     });
   }
 });
-module.exports = multer({ storage });
+module.exports = multer({
+  storage
+});

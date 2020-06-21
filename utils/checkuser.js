@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const SECRET_KEY = process.env.SECRET_KEY;
 
 const checkUser = (req, res, next) => {
-  if ( req.body.token !== null || req.query.token !== null) {
+  if (req.body.token !== null || req.query.token !== null) {
     let token = "";
     if (req.query.token != null) {
       token = req.query.token;
@@ -12,7 +12,7 @@ const checkUser = (req, res, next) => {
     }
     const decodedToken = null
     try {
-      decodedToken = jwt.verify(token,  SECRET_KEY);
+      decodedToken = jwt.verify(token, SECRET_KEY);
       console.log("user found")
       req.user = decodedToken.payload;
     } catch (e) {

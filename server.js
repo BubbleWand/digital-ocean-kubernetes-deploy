@@ -12,8 +12,13 @@ app.use(cors());
 app.options('*', cors());
 
 // Use Body Parser
-app.use(bodyParser.json({limit: '25mb'}));
-app.use(bodyParser.urlencoded({ extended: false, limit: '25mb' }));
+app.use(bodyParser.json({
+  limit: '25mb'
+}));
+app.use(bodyParser.urlencoded({
+  extended: false,
+  limit: '25mb'
+}));
 
 
 // Add after body parser initialization!

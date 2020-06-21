@@ -6,7 +6,7 @@ const CommentSchema = new Schema({
   createdAt: { type: Date },
   updatedAt: { type: Date },
   likedBy: [{type: Schema.Types.ObjectId, ref:"User"}],
-})
+}, { minimize: false })
 
 CommentSchema.pre("save", function(next) {
   // SET createdAt AND updatedAt

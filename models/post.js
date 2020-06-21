@@ -8,7 +8,7 @@ const PostSchema = new Schema({
   updatedAt: { type: Date },
   likedBy: [{type: Schema.Types.ObjectId, ref:"User"}],
   comments: [{ type: Schema.Types.ObjectId, ref:"Comment" }],
-})
+}, { minimize: false })
 
 PostSchema.pre("save", function(next) {
   // SET createdAt AND updatedAt

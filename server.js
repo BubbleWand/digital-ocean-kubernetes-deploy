@@ -28,7 +28,7 @@ app.use(expressValidator());
 app.use(cookieParser());
 
 // setup user auth
-// app.use(checkUser);
+app.use(checkUser);
 
 
 // router

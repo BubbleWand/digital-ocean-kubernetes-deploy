@@ -72,7 +72,6 @@ UserSchema.pre("save", function(next) {
       next();
     });
   });
-  next();
 });
 
 // Need to use function to enable this.password to work.

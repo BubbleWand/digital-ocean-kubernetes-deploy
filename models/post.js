@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
   author: { type: Schema.Types.ObjectId, ref:"User", required: true },
-  filename: { type: String, default: "" },
+  files: [{ type: String, default: "" }],
   createdAt: { type: Date },
   updatedAt: { type: Date },
   likedBy: [{type: Schema.Types.ObjectId, ref:"User"}],

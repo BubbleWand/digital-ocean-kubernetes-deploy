@@ -2,9 +2,6 @@ const mongoose = require("mongoose");
 require('dotenv').config();
 
 const url = process.env.MONGODB_URI
-// const conn = mongoose.createConnection(url);
-
-// module.exports = conn;
 
 mongoose.Promise = global.Promise;
 mongoose.connect(

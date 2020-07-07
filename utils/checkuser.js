@@ -1,6 +1,6 @@
 const User = require("../models/user");
 const jwt = require('jsonwebtoken')
-const SECRET_KEY = process.env.SECRET_KEY;
+const SECRET_KEY = process.env.SECRET;
 
 const checkUser = (req, res, next) => {
   if (req.body.token !== null || req.query.token !== null) {

@@ -36,4 +36,4 @@ const indexRouter = require('./controllers/index');
 app.use('', indexRouter);
 
 const port = process.env.PORT
-app.listen(port, () => console.log(`BubbleBlower listening on port ${port}!`))
+app.listen(port, () => console.log(`Bubble API listening on port ${port}!`))

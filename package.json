@@ -1,5 +1,5 @@
 {
-  "name": "bubbleblower",
+  "name": "bubble-api",
   "version": "1.0.0",
   "description": "API for bubble app.",
   "main": "server.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BubbleWand/BubbleBlower.git"
+    "url": "git+https://github.com/BubbleWand/api.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BubbleWand/BubbleBlower/issues"
+    "url": "https://github.com/BubbleWand/api/issues"
   },
-  "homepage": "https://github.com/BubbleWand/BubbleBlower#readme",
+  "homepage": "https://github.com/BubbleWand/api#readme",
   "dependencies": {
     "assert": "^2.0.0",
     "bcryptjs": "^2.4.3",

@@ -14,7 +14,7 @@ module.exports = {
         const token = jwt.sign({
           _id: user._id
         }, process.env.SECRET, {
-          expiresIn: "60 days"
+          expiresIn: process.env.TOKEN_EXPIRE
         })
         return res.status(200).json({
           msg: "success",
@@ -59,7 +59,7 @@ module.exports = {
             _id: user._id,
             username: user.username
           }, process.env.SECRET, {
-            expiresIn: "60 days"
+            expiresIn: process.env.TOKEN_EXPIRE
           });
           // Set a cookie and redirect to root
           return res.json({

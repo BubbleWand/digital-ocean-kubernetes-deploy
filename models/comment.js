@@ -6,7 +6,7 @@ const CommentSchema = new Schema({
   content: { type: String, default: "" },
   createdAt: { type: Date },
   updatedAt: { type: Date },
-  likedBy: [{type: Schema.Types.ObjectId, ref:"User"}],
+  likes: [{type: Schema.Types.ObjectId, ref:"User"}],
 }, { minimize: false })
 
 CommentSchema.pre("save", function(next) {

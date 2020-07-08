@@ -6,15 +6,15 @@ module.exports = {
     const filename = req.params.imgName;
     const gfs = getGfs(conn)
     gfs.files.findOne({
-      filename: filename
+      filename
     }, (err, file) => {
-      if (!file || file.lenth === 0) {
+      if (!file || file.length === 0) {
         return res.status(404).json({
           err: 'file name mismatch/ file not found.'
         })
       } else {
-        const readstream = gfs.createReadStream(file.filename);
-        readstream.pipe(res);
+        const readStream = gfs.createReadStream(file.filename);
+        readStream.pipe(res);
       }
     });
   },
@@ -22,7 +22,7 @@ module.exports = {
     const filename = req.params.imgName;
     const gfs = getGfs(conn);
     gfs.remove({
-      filename: filename,
+      filename,
       root: 'uploads'
     }, (err, gridStore) => {
       if (err) {

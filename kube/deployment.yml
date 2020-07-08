@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bubble-api
+  namespace: default
+  labels:
+    app: bubble-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bubble-api
+  template:
+    metadata:
+      labels:
+        app: bubble-api
+    spec:
+      containers:
+        - name: bubble-api
+          image: ikejs/bubble-api:latest
+          ports:
+            - containerPort: 80
+              name: http

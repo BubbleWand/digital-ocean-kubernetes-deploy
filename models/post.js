@@ -6,7 +6,7 @@ const PostSchema = new Schema({
   files: [{ type: String, default: "" }],
   createdAt: { type: Date },
   updatedAt: { type: Date },
-  likedBy: [{type: Schema.Types.ObjectId, ref:"User"}],
+  likes: [{type: Schema.Types.ObjectId, ref:"User"}],
   comments: [{ type: Schema.Types.ObjectId, ref:"Comment" }],
 }, { minimize: false })
 

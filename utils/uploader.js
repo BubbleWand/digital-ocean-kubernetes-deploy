@@ -3,7 +3,7 @@ const multer = require('multer');
 const path = require('path');
 const crypto = require('crypto');
 
-// mutler setup
+// multer setup
 const storage = new GridFsStorage({
   url: process.env.MONGODB_URI,
   file: (req, file) => {

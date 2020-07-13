@@ -35,5 +35,5 @@ app.use(checkUser);
 const indexRouter = require('./controllers/index');
 app.use('', indexRouter);
 
-const port = process.env.PORT
+const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Bubble API listening on port ${port}!`))

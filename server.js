@@ -2,7 +2,7 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const cookieParser = require('cookie-parser');
-const checkUser = require("./utils/checkuser");
+const checkUser = require("./utils/checkUser");
 
 // enabling cors
 const cors = require('cors');

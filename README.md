@@ -2,6 +2,9 @@
 
 An API for the Bubble app.
 
+## Status
+[status.blowabubble.com](http://status.blowabubble.com)
+
 ![Image Size Flag](https://img.shields.io/docker/image-size/ikejs/bubble-api)
 ![Build Status Flag](https://img.shields.io/circleci/build/github/BubbleWand/api)
 ![Ping Status Flag](https://img.shields.io/website.svg?url=http://api.blowabubble.com/)

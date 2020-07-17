@@ -30,16 +30,16 @@ Make requests to [localhost:3000](http://localhost:3000).
 Responses
 ```json
 {
-    msg: "success",
-    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIi...",
-    user: {
-        ...
+    "msg": "success",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIi...",
+    "user": {
+        "...": "..."
     }
 }
 ```
 ```json
 {
-    errors: ["That account already exists!"]
+    "errors": ["That account already exists!"]
 }
 ```
 
@@ -52,13 +52,13 @@ Responses
 Responses
 ```json
 {
-    status: 200,
-    message: "Success: Logged in",
-    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIi..."
+    "status": 200,
+    "message": "Success: Logged in",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIi..."
 }
 ```
 ```json
 {
-    errors: ["That account already exists!"]
+    "errors": ["That account already exists!"]
 }
 ```

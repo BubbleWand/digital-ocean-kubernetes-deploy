@@ -4,6 +4,9 @@ const image = require('./image');
 const user = require('./user');
 const upload = require('../utils/uploader');
 
+// ping stats
+router.get('/', (req, res) => res.status(200).send('pong'));
+
 // authentication routes
 router.post('/login', auth.loginPost);
 router.post('/signup', upload.single('profilePhoto'), auth.signupPost);

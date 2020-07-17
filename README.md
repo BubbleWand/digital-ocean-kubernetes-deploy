@@ -2,9 +2,9 @@
 
 An API for the Bubble app.
 
-![Uptime Flag](https://img.shields.io/circleci/build/github/BubbleWand/api)
-![Last Commit Flag](https://img.shields.io/github/last-commit/BubbleWand/api)
-![GitHub Open Issues Flag](https://img.shields.io/github/issues/BubbleWand/api)
+![Image Size Flag](https://img.shields.io/docker/image-size/ikejs/bubble-api)
+![Build Status Flag](https://img.shields.io/circleci/build/github/BubbleWand/api)
+![Ping Status Flag](https://img.shields.io/website.svg?url=http://api.blowabubble.com/)
 
 ## Installation
 
